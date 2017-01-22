@@ -9,7 +9,8 @@ import matplotlib.pyplot as plt
 np.random.seed(123)
 #np.set_printoptions(threshold='nan',precision=0)
 
-
+#initialization should be up here
+#the export situation is ridiculous
 
 def setup(n,k,c):#generates nxn sized lattice with randomly distributed cxc sized crowders 
 	lat=np.zeros(n*n).reshape(n,n)
@@ -111,7 +112,7 @@ for j in range(0,len(fracV)):
 		Wo=np.zeros(loops)
 		Wc=np.zeros(loops)
 		print c[t]
-		for i in range(0,loops):
+		for i in range(0,loops):#this should be a function
 			lat=setup(n,k[t],c[t])
 			Wo[i]=fitO(lat,O1,O2,H90o,n)
 			Wc[i]=fitC(lat,C1,C2,H90c,n)
